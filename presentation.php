@@ -16,11 +16,11 @@
   <nav class="navbar">
     <a href="index.html" class="logo">S<span>CHOLIA</span></a>
     <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="presentation.html" class="active">Présentation</a></li>
-      <li><a href="promotion.html">Promotion</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="administration.html" class="btn-nav">Administration</a></li>
+      <li><a href="index.php">Accueil</a></li>
+      <li><a href="presentation.php" class="active">Présentation</a></li>
+      <li><a href="promotion.php">Promotion</a></li>
+      <li><a href="contact.php">Contact</a></li>
+      <li><a href="administration.php" class="btn-nav">Administration</a></li>
     </ul>
   </nav>
 </header>

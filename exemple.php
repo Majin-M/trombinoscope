@@ -20,7 +20,7 @@
         </div>
         <div class="card-info">
             <h3>Prénom:Yan
-                 Boutou</h3>
+                Nom: Boutou</h3>
             <p class="contact">yan@exemple.fr</p>
             <div class="card-links">
                 <a href="https://github.com/" target="_blank" class="card-link github"><i class="fab fa-github"></i></a>
