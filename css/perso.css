@@ -1,0 +1,152 @@
+/* ── GRILLE ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 28px;
+}
+
+/* ── CARTE ── */
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,.08);
+  border: 1px solid var(--border);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s, box-shadow .25s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(245, 99, 26, .25);
+}
+
+/* ── ZONE IMAGE ── */
+.card-img {
+  background: var(--light);
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ──  conteneur image ── */
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;          
+  flex-shrink: 0;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 3px var(--orange), 0 4px 16px rgba(245,99,26,.3);
+}
+
+/* ── L'IMAGE remplit juste le cercle ── */
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 0;         
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* ── Reset du img global ── */
+img {
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  padding: 0;
+  box-shadow: none;
+}
+
+
+/* ── ZONE INFOS — hauteur fixe, toujours identique ── */
+.card-info {
+  background: #1E3050;
+  padding: 16px 16px 20px;
+  min-height: 130px;          /* ← hauteur minimale identique partout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;    /* ← contenu centré verticalement */
+  gap: 6px;
+  flex: 1;                    /* ← prend tout l'espace restant */
+}
+
+.card-info h3 {
+  font-size: .92rem;
+  font-weight: 900;
+  color: var(--white);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.card-info .contact {
+  color: rgba(255,255,255,.45);
+  font-size: .72rem;
+  margin: 0;
+}
+
+/* ── LIENS SOCIAUX ── */
+.card-links {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.card-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+.card-link i { font-size: 14px; }
+
+.card-link.github {
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.7);
+}
+.card-link.github:hover {
+  background: #333;
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.card-link.linkedin {
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.7);
+}
+.card-link.linkedin:hover {
+  background: #0A66C2;
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.card-link.portfolio {
+  background: rgba(245,99,26,.15);
+  color: var(--orange);
+}
+.card-link.portfolio:hover {
+  background: var(--orange);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ── TITRE DE SECTION ── */
+.promo-section h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 36px;
+  color: var(--navy);
+}

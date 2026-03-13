@@ -1,0 +1,324 @@
+
+
+/* ── HERO ── */
+.hero {
+  background-image:
+    linear-gradient(135deg, rgba(17, 29, 46, 0.85) 50%, rgba(245, 99, 26, 0.4)),
+    url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRlY2hub2xvZ2llfGVufDB8MHwwfHx8MA%3D%3D');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 100px 48px;
+  color: #ffffff;
+}
+
+/* motif de points décoratif */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(245,99,26,.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.hero h1 {
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--white);
+  line-height: 1.15;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.hero h1 span { color: var(--orange); }
+
+.hero-sub {
+  color: rgba(255,255,255,.55);
+  font-size: .88rem;
+  margin-bottom: 24px;
+  letter-spacing: .03em;
+}
+
+/* Chips / badges */
+.hero-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.chip {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.85);
+  font-size: .75rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: .04em;
+}
+
+/* Encart RNCP */
+.rncp-box {
+  background: var(--white);
+  border-radius: 10px;
+  border-top: 4px solid var(--orange);
+  padding: 28px 32px;
+  text-align: center;
+  min-width: 200px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.25);
+  flex-shrink: 0;
+}
+.rncp-level {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+}
+.rncp-label {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--gray);
+  margin-bottom: 6px;
+}
+.rncp-code {
+  background: var(--navy);
+  color: var(--white);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  padding: 4px 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.rncp-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 14px 0;
+}
+.rncp-ministere {
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--gray);
+  margin-bottom: 4px;
+}
+.rncp-ministere-name {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.5;
+}
+
+
+/* ── CONTENU ── */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 48px 80px;
+}
+
+/* En-tête de section */
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 48px 0 20px;
+}
+.sec-head:first-child { margin-top: 0; }
+
+.sec-num {
+  width: 40px; height: 40px;
+  background: var(--orange);
+  color: var(--white);
+  font-weight: 900;
+  font-size: 1rem;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sec-head h2 {
+  font-weight: 900;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+
+/* ── RÉSUMÉ ── */
+.summary-card {
+  background: var(--white);
+  border-left: 4px solid var(--orange);
+  border-radius: 0 8px 8px 0;
+  padding: 24px 28px;
+  font-size: .95rem;
+  color: #374151;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  line-height: 1.8;
+}
+.summary-card strong { color: var(--navy); }
+
+
+/* ── PROFIL ── */
+.profil-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.profil-tag {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--navy);
+  transition: all .2s;
+}
+
+
+/* ── COMPÉTENCES ── */
+.competences-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.comp-block {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+}
+
+.comp-block-head {
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+}
+.comp-block-head .num {
+  background: var(--orange);
+  color: var(--white);
+  font-weight: 900;
+  font-size: 1rem;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.comp-block-head h3 {
+  color: var(--white);
+  font-size: .88rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.comp-block ul {
+  padding: 18px 20px 20px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.comp-block li {
+  font-size: .85rem;
+  color: #374151;
+}
+.comp-block li::marker { color: var(--orange); }
+
+
+/* ── DURÉE & RYTHME ── */
+.duree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.duree-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.07);
+  border-top: 3px solid var(--border);
+}
+.duree-card.highlight { border-top-color: var(--orange); }
+
+.d-label {
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+.d-value {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--navy);
+}
+.d-sub {
+  font-size: .75rem;
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+
+/* ── COÛT ── */
+.cout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.cout-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+  border-top: 4px solid var(--border);
+}
+.cout-card.free  { border-top-color: #22c55e; }
+.cout-card.paid  { border-top-color: var(--orange); }
+
+.cout-mode {
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--gray);
+  display: block;
+  margin-bottom: 10px;
+}
+.cout-price {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.cout-price small {
+  font-size: 1rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+.cout-desc {
+  font-size: .83rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
