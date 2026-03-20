@@ -1,3 +1,12 @@
+
+<?php
+require_once "StudentManager.class.php";
+$students = new StudentManager();
+
+$students->loadStudents();
+
+
+ ob_start();?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,22 +22,10 @@
 
 <body>
 
-  <header>
-    <nav class="navbar">
-      <div class="logo">S<span>CHOLIA</span></div>
-      <ul>
-        <li><a href="index.php">Accueil</a></li>
-        <li><a href="presentation.php">Présentation</a></li>
-        <li><a href="promotion.php">Promotion</a></li>
-        <li><a href="contact.php">Contact</a></li>
-        <li><a href="administration.php" class="btn-nav active">Administration</a></li>
-      </ul>
-    </nav>
-  </header>
 
   <main class="container">
     <section class="admin-section">
-
+      
       <!-- ── EN-TÊTE ── -->
       <div class="admin-header">
         <div>
@@ -45,7 +42,7 @@
         <div class="stat-card">
           <div class="stat-icon"><i class="fas fa-users"></i></div>
           <div>
-            <div class="stat-value">12</div>
+            <div class="stat-value"><?= count($students->getStudent()) ?></div>
             <div class="stat-label">Étudiants</div>
           </div>
         </div>
@@ -66,6 +63,7 @@
       </div>
 
       <!-- ── TABLEAU ── -->
+       
       <div class="table-card">
         <div class="table-toolbar">
           <span class="table-title"><i class="fas fa-list"></i> Liste des étudiants</span>
@@ -81,10 +79,10 @@
           <table class="admin-table">
             <thead>
               <tr>
-                <th>#</th>
+                <th>id</th>
                 <th>Photo</th>
                 <th>Nom</th>
-                <th>Email</th>
+                <th>Age</th>
                 <th>GitHub</th>
                 <th>LinkedIn</th>
                 <th>Portfolio</th>
@@ -92,19 +90,19 @@
               </tr>
             </thead>
             <tbody>
-
+              <?php foreach ($students->getStudent() as $etudiant){ ?>
               <tr>
-                <td class="td-num">1</td>
+                <td class="td-num"><?= $etudiant->getId() ?></td>
                 <td>
                   <div class="table-avatar">
-                    <img src="img/yan-boutou.avif" alt="Yan Boutou"/>
+                    <img src="img\<?= $etudiant->getPhoto() ?>" alt="<?= $etudiant->getNom() . " " . $etudiant->getPrenom() ?>"/>
                   </div>
                 </td>
-                <td class="td-name">Yan Boutou</td>
-                <td class="td-email">yan@exemple.fr</td>
-                <td><a href="#" class="td-link"><i class="fab fa-github"></i></a></td>
-                <td><a href="#" class="td-link linkedin"><i class="fab fa-linkedin-in"></i></a></td>
-                <td><a href="#" class="td-link portfolio"><i class="fas fa-globe"></i></a></td>
+                <td class="td-name"><?= $etudiant->getNom()." ". $etudiant->getPrenom() ?> </td>
+                <td class="td-email"><?= $etudiant->getAge() ?></td>      
+                <td><a href="<?= $etudiant->getGithub() ?>" class="td-link"><i class="fab fa-github"></i></a></td>
+                <td><a href="<?= $etudiant->getLinkedin() ?>" class="td-link linkedin"><i class="fab fa-linkedin-in"></i></a></td>
+                <td><a href="<?= $etudiant->getPortfolio() ?>" class="td-link portfolio"><i class="fas fa-globe"></i></a></td>
                 <td>
                   <div class="action-btns">
                     <a href="#form-edit" class="action-btn edit" title="Modifier">
@@ -117,52 +115,7 @@
                 </td>
               </tr>
 
-              <tr>
-                <td class="td-num">2</td>
-                <td>
-                  <div class="table-avatar">
-                    <img src="img/si-de-flandres-taty.webp" alt="Si de Flandres Taty"/>
-                  </div>
-                </td>
-                <td class="td-name">Si de Flandres Taty</td>
-                <td class="td-email">taty@exemple.fr</td>
-                <td><a href="#" class="td-link"><i class="fab fa-github"></i></a></td>
-                <td><a href="#" class="td-link linkedin"><i class="fab fa-linkedin-in"></i></a></td>
-                <td><a href="#" class="td-link portfolio"><i class="fas fa-globe"></i></a></td>
-                <td>
-                  <div class="action-btns">
-                    <a href="#form-edit" class="action-btn edit" title="Modifier">
-                      <i class="fas fa-pen"></i>
-                    </a>
-                    <button class="action-btn delete" title="Supprimer">
-                      <i class="fas fa-trash"></i>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="td-num">3</td>
-                <td>
-                  <div class="table-avatar">
-                    <img src="img/trésor-otogo.jpg" alt="Trésor Otogo"/>
-                  </div>
-                </td>
-                <td class="td-name">Trésor Otogo</td>
-                <td class="td-email">otogo@exemple.fr</td>
-                <td><a href="#" class="td-link"><i class="fab fa-github"></i></a></td>
-                <td><a href="#" class="td-link linkedin"><i class="fab fa-linkedin-in"></i></a></td>
-                <td><a href="#" class="td-link portfolio"><i class="fas fa-globe"></i></a></td>
-                <td>
-                  <div class="action-btns">
-                    <a href="#form-edit" class="action-btn edit"><i class="fas fa-pen"></i></a>
-                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
-                  </div>
-                </td>
-              </tr>
-
-              <!-- Répète les lignes pour chaque étudiant -->
-
+             <?php }?>
             </tbody>
           </table>
         </div>
@@ -298,20 +251,9 @@
 
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div>
-      <div class="footer-logo">S<span>CHOLIA</span></div>
-      <div class="footer-sub">Centre de Formation en Alternance</div>
-    </div>
-    <div class="footer-info">
-      Tour Europa, 9 Avenue de l'Europe, 94320 Thiais<br />
-      NDA : 11 75 65673 75 · Siret : 914 873 641 00015<br />
-      <a href="tel:+33756866869">+33 (0)7 56 86 68 69</a> ·
-      <a href="mailto:contact@scholia.fr">contact@scholia.fr</a> ·
-      <a href="https://www.scholia.fr" target="_blank">www.scholia.fr</a>
-    </div>
-  </footer>
-
 </body>
+
+<?php $content= ob_get_clean();
+require "template.php";
+?>
 </html>

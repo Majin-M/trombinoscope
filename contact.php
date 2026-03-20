@@ -1,3 +1,4 @@
+<?php ob_start();?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,24 +12,10 @@
 </head>
 
 <body>
-
-  <header>
-    <nav class="navbar">
-      <div class="logo">S<span>CHOLIA</span></div>
-      <ul>
-        <li><a href="index.php">Accueil</a></li>
-        <li><a href="presentation.php">Présentation</a></li>
-        <li><a href="promotion.php">Promotion</a></li>
-        <li><a href="contact.php">Contact</a></li>
-        <li><a href="administration.php" class="btn-nav">Administration</a></li>
-      </ul>
-    </nav>
-  </header>
-  
   <main class="container">
     <section class="contact-section">
   <div class="section-title">
-    <h2>Nous <span>Contacter</span></h2>
+    <h2>Nous Contacter</h2>
   </div>
   <form class="contact-form" action="#">
     <div class="form-row">
@@ -54,20 +41,9 @@
 </section>
   </main>
 
-  <footer class="site-footer">
-    <div>
-      <div class="footer-logo">S<span>CHOLIA</span></div>
-      <div class="footer-sub">Centre de Formation en Alternance</div>
-    </div>
-    <div class="footer-info">
-      Tour Europa, 9 Avenue de l'Europe, 94320 Thiais<br />
-      NDA : 11 75 65673 75 · Siret : 914 873 641 00015<br />
-      <a href="tel:+33756866869">+33 (0)7 56 86 68 69</a> ·
-      <a href="mailto:contact@scholia.fr">contact@scholia.fr</a> ·
-      <a href="https://www.scholia.fr" target="_blank">www.scholia.fr</a>
-    </div>
-  </footer>
-
 </body>
 
+<?php $content= ob_get_clean();
+require "template.php";
+?>
 </html>

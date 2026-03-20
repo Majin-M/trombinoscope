@@ -1,3 +1,4 @@
+<?php ob_start();?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,20 +13,10 @@
 <body>
 
     <header>
-        <nav class="navbar">
-            <div class="logo">S<span>CHOLIA</span></div>
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="presentation.php">Présentation</a></li>
-                <li><a href="promotion.php">Promotion</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="administration.php" class="btn-nav">Administration</a></li>
-            </ul>
-        </nav>
         <section class="hero">
             <h1>Bienvenue sur notre formation Concepteur developpeur d'applications🎓</h1>
             <p>Retrouvez tous les membres de la promotion 2025.</p>
-            <a href="promotion.html" class="btn">Voir la promotion</a>
+            <a href="promotion.php" class="btn">Voir la promotion</a>
         </section>
     </header>
 
@@ -74,28 +65,18 @@
                     </div>
 
                     <div class="about-cta">
-                        <a href="presentation.html" class="btn">Découvrir la formation →</a>
-                        <a href="contact.html" class="btn btn-outline">Nous contacter</a>
+                        <a href="presentation.php" class="btn">Découvrir la formation →</a>
+                        <a href="contact.php" class="btn btn-outline">Nous contacter</a>
                     </div>
 
                 </section>
 
             </main>
 
-        <footer class="site-footer">
-            <div>
-                <div class="footer-logo">S<span>CHOLIA</span></div>
-                <div class="footer-sub">Centre de Formation en Alternance</div>
-            </div>
-            <div class="footer-info">
-                Tour Europa, 9 Avenue de l'Europe, 94320 Thiais<br />
-                NDA : 11 75 65673 75 · Siret : 914 873 641 00015<br />
-                <a href="tel:+33756866869">+33 (0)7 56 86 68 69</a> ·
-                <a href="mailto:contact@scholia.fr">contact@scholia.fr</a> ·
-                <a href="https://www.scholia.fr" target="_blank">www.scholia.fr</a>
-            </div>
-        </footer>
-
 </body>
+
+<?php $content= ob_get_clean();
+require "template.php";
+?>
 
 </html>

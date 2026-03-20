@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,187 +6,164 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Présentation — Bachelor CDA · Scholia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/presentation.css" />
 </head>
 
 <body>
-
-  <header>
-  <nav class="navbar">
-    <a href="index.html" class="logo">S<span>CHOLIA</span></a>
-    <ul>
-      <li><a href="index.php">Accueil</a></li>
-      <li><a href="presentation.php" class="active">Présentation</a></li>
-      <li><a href="promotion.php">Promotion</a></li>
-      <li><a href="contact.php">Contact</a></li>
-      <li><a href="administration.php" class="btn-nav">Administration</a></li>
-    </ul>
-  </nav>
-</header>
- 
-
-<div class="hero">
-  <div class="hero-inner">
-    <div>
-      <h1>Bachelor<br/><span>Concepteur Développeur<br/>d'Applications</span></h1>
-      <p class="hero-sub">Centre de Formation d'Apprentis · Tour Europa, Thiais 94320</p>
-      <div class="hero-chips">
-        <span class="chip">⏱ 12 mois</span>
-        <span class="chip">🎓 BAC+3 · Niveau 6</span>
-        <span class="chip">Alternance disponible</span>
-        <span class="chip">💻 Dev · Web · Mobile · DevOps</span>
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Bachelor<br /><span>Concepteur Développeur<br />d'Applications</span></h1>
+        <p class="hero-sub">Centre de Formation en Alternance · Tour Europa, Thiais 94320</p>
+        <div class="hero-chips">
+          <span class="chip">⏱ 12 mois</span>
+          <span class="chip">🎓 BAC+3 · Niveau 6</span>
+          <span class="chip">Alternance disponible</span>
+          <span class="chip">💻 Dev · Web · Mobile · DevOps</span>
+        </div>
+      </div>
+      <div class="rncp-box">
+        <div class="rncp-level">N6</div>
+        <div class="rncp-label">Niveau RNCP</div>
+        <div class="rncp-code">RNCP37873</div>
+        <hr class="rncp-divider" />
+        <div class="rncp-ministere">Délivré par</div>
+        <div class="rncp-ministere-name">Ministère du Travail<br />du Plein Emploi<br />et de l'Insertion</div>
       </div>
     </div>
-    <div class="rncp-box">
-      <div class="rncp-level">N6</div>
-      <div class="rncp-label">Niveau RNCP</div>
-      <div class="rncp-code">RNCP37873</div>
-      <hr class="rncp-divider"/>
-      <div class="rncp-ministere">Délivré par</div>
-      <div class="rncp-ministere-name">Ministère du Travail<br/>du Plein Emploi<br/>et de l'Insertion</div>
-    </div>
   </div>
-</div>
- 
 
-<div class="content">
- 
-  <!-- RÉSUMÉ -->
-  <div class="sec-head">
-    <div class="sec-num">I</div>
-    <h2>Résumé de la formation</h2>
-  </div>
-  <div class="summary-card">
-    Le concepteur développeur d'applications conçoit et développe des <strong>applications sécurisées</strong> : logiciels d'entreprise, applications pour mobiles &amp; tablettes, sites Web. Il respecte la réglementation en vigueur, identifie les besoins en éco-conception et applique les procédures qualité de l'entreprise. Il contribue à la réussite du projet en termes de <strong>satisfaction des besoins utilisateurs, gestion de projet, qualité, coût et délai</strong>. La sécurité de l'application est pour lui une préoccupation constante.
-  </div>
- 
-  <!-- PROFIL -->
-  <div class="sec-head">
-    <div class="sec-num">II</div>
-    <h2>Profil recherché</h2>
-  </div>
-  <div class="profil-grid">
-    <div class="profil-tag"> Rigueur</div>
-    <div class="profil-tag"> Curiosité technologique</div>
-    <div class="profil-tag"> Esprit analytique</div>
-    <div class="profil-tag"> Travail en équipe</div>
-    <div class="profil-tag"> Créativité</div>
-    <div class="profil-tag"> Communication</div>
-    <div class="profil-tag"> Adaptabilité</div>
-  </div>
- 
-  <!-- COMPÉTENCES -->
-  <div class="sec-head">
-    <div class="sec-num">III</div>
-    <h2>Objectifs &amp; Compétences</h2>
-  </div>
-  <div class="competences-grid">
- 
-    <div class="comp-block">
-      <div class="comp-block-head">
-        <div class="num">1</div>
-        <h3>Développer une application sécurisée</h3>
+
+  <div class="content">
+
+    <!-- RÉSUMÉ -->
+    <div class="sec-head">
+      <div class="sec-num">I</div>
+      <h2>Résumé de la formation</h2>
+    </div>
+    <div class="summary-card">
+      Le concepteur développeur d'applications conçoit et développe des <strong>applications sécurisées</strong> :
+      logiciels d'entreprise, applications pour mobiles &amp; tablettes, sites Web. Il respecte la réglementation en
+      vigueur, identifie les besoins en éco-conception et applique les procédures qualité de l'entreprise. Il contribue
+      à la réussite du projet en termes de <strong>satisfaction des besoins utilisateurs, gestion de projet, qualité,
+        coût et délai</strong>. La sécurité de l'application est pour lui une préoccupation constante.
+    </div>
+
+    <!-- PROFIL -->
+    <div class="sec-head">
+      <div class="sec-num">II</div>
+      <h2>Profil recherché</h2>
+    </div>
+    <div class="profil-grid">
+      <div class="profil-tag"> Rigueur</div>
+      <div class="profil-tag"> Curiosité technologique</div>
+      <div class="profil-tag"> Esprit analytique</div>
+      <div class="profil-tag"> Travail en équipe</div>
+      <div class="profil-tag"> Créativité</div>
+      <div class="profil-tag"> Communication</div>
+      <div class="profil-tag"> Adaptabilité</div>
+    </div>
+
+    <!-- COMPÉTENCES -->
+    <div class="sec-head">
+      <div class="sec-num">III</div>
+      <h2>Objectifs &amp; Compétences</h2>
+    </div>
+    <div class="competences-grid">
+
+      <div class="comp-block">
+        <div class="comp-block-head">
+          <div class="num">1</div>
+          <h3>Développer une application sécurisée</h3>
+        </div>
+        <ul>
+          <li>Installer et configurer son environnement de travail en fonction du projet</li>
+          <li>Développer des interfaces utilisateur</li>
+          <li>Développer des composants métier</li>
+          <li>Contribuer à la gestion d'un projet informatique</li>
+        </ul>
       </div>
-      <ul>
-        <li>Installer et configurer son environnement de travail en fonction du projet</li>
-        <li>Développer des interfaces utilisateur</li>
-        <li>Développer des composants métier</li>
-        <li>Contribuer à la gestion d'un projet informatique</li>
-      </ul>
-    </div>
- 
-    <div class="comp-block">
-      <div class="comp-block-head">
-        <div class="num">2</div>
-        <h3>Concevoir une application organisée en couches</h3>
+
+      <div class="comp-block">
+        <div class="comp-block-head">
+          <div class="num">2</div>
+          <h3>Concevoir une application organisée en couches</h3>
+        </div>
+        <ul>
+          <li>Analyser les besoins et maquetter une application</li>
+          <li>Définir l'architecture logicielle d'une application</li>
+          <li>Concevoir et mettre en place une base de données relationnelle</li>
+          <li>Développer des composants d'accès aux données SQL et NoSQL</li>
+        </ul>
       </div>
-      <ul>
-        <li>Analyser les besoins et maquetter une application</li>
-        <li>Définir l'architecture logicielle d'une application</li>
-        <li>Concevoir et mettre en place une base de données relationnelle</li>
-        <li>Développer des composants d'accès aux données SQL et NoSQL</li>
-      </ul>
-    </div>
- 
-    <div class="comp-block">
-      <div class="comp-block-head">
-        <div class="num">3</div>
-        <h3>Préparer le déploiement d'une application sécurisée</h3>
+
+      <div class="comp-block">
+        <div class="comp-block-head">
+          <div class="num">3</div>
+          <h3>Préparer le déploiement d'une application sécurisée</h3>
+        </div>
+        <ul>
+          <li>Préparer et exécuter les plans de tests d'une application</li>
+          <li>Préparer et documenter le déploiement d'une application</li>
+          <li>Contribuer à la mise en production dans une démarche DevOps</li>
+        </ul>
       </div>
-      <ul>
-        <li>Préparer et exécuter les plans de tests d'une application</li>
-        <li>Préparer et documenter le déploiement d'une application</li>
-        <li>Contribuer à la mise en production dans une démarche DevOps</li>
-      </ul>
-    </div>
- 
-  </div>
- 
-  <!-- DURÉE -->
-  <div class="sec-head">
-    <div class="sec-num">IV</div>
-    <h2>Durée &amp; Rythme</h2>
-  </div>
-  <div class="duree-grid">
-    <div class="duree-card highlight">
-      <div class="d-label">Début de formation</div>
-      <div class="d-value">Octobre 2025</div>
-    </div>
-    <div class="duree-card">
-      <div class="d-label">Durée totale</div>
-      <div class="d-value">12 mois</div>
-    </div>
-    <div class="duree-card">
-      <div class="d-label">Rythme alternance</div>
-      <div class="d-value">2 jours / 3 jours</div>
-      <div class="d-sub">Formation / Entreprise</div>
-    </div>
-    <div class="duree-card">
-      <div class="d-label">Formation initiale</div>
-      <div class="d-value">Stage 6 semaines</div>
-      <div class="d-sub">Obligatoire</div>
-    </div>
-  </div>
- 
-  <!-- COÛT -->
-  <div class="sec-head">
-    <div class="sec-num">V</div>
-    <h2>Coût de la formation</h2>
-  </div>
-  <div class="cout-grid">
-    <div class="cout-card free">
-      <span class="cout-mode"> Alternance</span>
-      <div class="cout-price">0 €<small> / an</small></div>
-      <p class="cout-desc">Formation entièrement financée par les opérateurs de compétences (OPCO). Aucun frais à la charge de l'étudiant.</p>
-    </div>
-    <div class="cout-card paid">
-      <span class="cout-mode"> Financement personnel</span>
-      <div class="cout-price">6 500 €<small> / an</small></div>
-      <p class="cout-desc">Tarif applicable en financement personnel. Des solutions de facilité de paiement peuvent être envisagées — contactez-nous.</p>
-    </div>
-  </div>
- 
-</div>
- 
 
-
-  <footer class="site-footer">
-    <div>
-      <div class="footer-logo">S<span>CHOLIA</span></div>
-      <div class="footer-sub">Centre de Formation en Alternance</div>
     </div>
-    <div class="footer-info">
-      Tour Europa, 9 Avenue de l'Europe, 94320 Thiais<br />
-      NDA : 11 75 65673 75 · Siret : 914 873 641 00015<br />
-      <a href="tel:+33756866869">+33 (0)7 56 86 68 69</a> ·
-      <a href="mailto:contact@scholia.fr">contact@scholia.fr</a> ·
-      <a href="https://www.scholia.fr" target="_blank">www.scholia.fr</a>
-    </div>
-  </footer>
 
+    <!-- DURÉE -->
+    <div class="sec-head">
+      <div class="sec-num">IV</div>
+      <h2>Durée &amp; Rythme</h2>
+    </div>
+    <div class="duree-grid">
+      <div class="duree-card highlight">
+        <div class="d-label">Début de formation</div>
+        <div class="d-value">Octobre 2025</div>
+      </div>
+      <div class="duree-card">
+        <div class="d-label">Durée totale</div>
+        <div class="d-value">12 mois</div>
+      </div>
+      <div class="duree-card">
+        <div class="d-label">Rythme alternance</div>
+        <div class="d-value">2 jours / 3 jours</div>
+        <div class="d-sub">Formation / Entreprise</div>
+      </div>
+      <div class="duree-card">
+        <div class="d-label">Formation initiale</div>
+        <div class="d-value">Stage 6 semaines</div>
+        <div class="d-sub">Obligatoire</div>
+      </div>
+    </div>
+
+    <!-- COÛT -->
+    <div class="sec-head">
+      <div class="sec-num">V</div>
+      <h2>Coût de la formation</h2>
+    </div>
+    <div class="cout-grid">
+      <div class="cout-card free">
+        <span class="cout-mode"> Alternance</span>
+        <div class="cout-price">0 €<small> / an</small></div>
+        <p class="cout-desc">Formation entièrement financée par les opérateurs de compétences (OPCO). Aucun frais à la
+          charge de l'étudiant.</p>
+      </div>
+      <div class="cout-card paid">
+        <span class="cout-mode"> Financement personnel</span>
+        <div class="cout-price">6 500 €<small> / an</small></div>
+        <p class="cout-desc">Tarif applicable en financement personnel. Des solutions de facilité de paiement peuvent
+          être envisagées — contactez-nous.</p>
+      </div>
+    </div>
+
+  </div>
 
 </body>
+<?php $content = ob_get_clean();
+require "template.php";
+?>
 
 </html>
