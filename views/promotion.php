@@ -1,11 +1,5 @@
 
 <?php
-require_once "StudentManager.class.php";
-$students = new StudentManager();
-
-$students->loadStudents();
-
-
  ob_start();?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,8 +11,8 @@ $students->loadStudents();
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
 		rel="stylesheet" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/perso.css" />
+	<link rel="stylesheet" href="public/css/style.css" />
+	<link rel="stylesheet" href="public/css/perso.css" />
 </head>
 
 <body>
@@ -62,7 +56,7 @@ $students->loadStudents();
 
 </body>
 <?php $content = ob_get_clean();
-require "template.php";
+require 'template.php';
 ?>
 
 </html>

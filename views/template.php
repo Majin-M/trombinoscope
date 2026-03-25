@@ -19,11 +19,11 @@
         <nav class="navbar">
             <div class="logo">S<span>cholia</span></div>
             <ul>
-                <li><a href="index.php">Accueil</a></li>
+                <li><a href="accueil.php">Accueil</a></li>
                 <li><a href="presentation.php">Présentation</a></li>
                 <li><a href="promotion.php">Promotion</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="administration.php" class="btn-nav">Administration</a></li>
+                <li><a href="admin/index.php" class="btn-nav">Administration</a></li>
             </ul>
         </nav>
 

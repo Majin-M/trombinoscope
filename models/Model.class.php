@@ -4,10 +4,10 @@ abstract class Model
 {
     private static $PDO;
 
-    //méthode statique qui établit la connexion à la Bdd
+    //méthode statique qui établit la connexion à la Base de Données
     private static function setBdd()
     {
-
+        
         self::$PDO = new PDO("mysql:host=localhost;dbname=students_cda;charset=utf8", "root", "");
         //setAttribute sert à configurer la gestion des erreurs par PDO lors des interations avec la Bdd
         self::$PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);

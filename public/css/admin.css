@@ -290,7 +290,8 @@
 }
 .input-icon input { padding-left: 36px !important; }
 
-.form-group input {
+.form-group input,
+.textarea {
   border: 2px solid var(--border);
   border-radius: 6px;
   padding: 11px 14px;
@@ -301,7 +302,8 @@
   transition: border-color .2s, background .2s;
   width: 100%;
 }
-.form-group input:focus {
+.form-group input:focus,
+.textarea:focus {
   outline: none;
   border-color: var(--orange);
   background: var(--white);
