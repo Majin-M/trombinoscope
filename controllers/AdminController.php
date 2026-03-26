@@ -1,5 +1,5 @@
 <?php
-class StudentController
+class AdminController
 {
 
     private $manager;
@@ -9,7 +9,7 @@ class StudentController
         $this->manager = new StudentManager();
     }
 
-    // correspond à /student/index
+    // correspond à /admin/index
     public function index()
 {
     $this->manager->loadStudents();
@@ -38,7 +38,7 @@ class StudentController
                 $_POST["description"] ?? null
             );
 
-            header("Location: index.php?url=student/index"); // retourne sur la page avec un Get
+            header("Location: index.php?url=admin/index"); // retourne sur la page avec un Get
             exit();
         }
     }
@@ -46,7 +46,7 @@ class StudentController
     {
         if (isset($_POST["delete"]) && $_POST["delete"] == "Supprimer" && isset($_POST["id_delete"])) {
             $this->manager->deleteStudentFromDB($_POST["id_delete"]);
-            header("Location: index.php?url=student/index"); // retourne sur la page avec un Get
+            header("Location: index.php?url=admin/index"); 
             exit();
         }
     }
@@ -65,7 +65,7 @@ class StudentController
                 $_POST["description"]
             );
 
-            header("Location: index.php?url=student/index");
+            header("Location: index.php?url=admin/index");
             exit();
         }
     }
