@@ -16,7 +16,7 @@
         <section class="hero">
             <h1>Bienvenue sur notre formation Concepteur developpeur d'applications🎓</h1>
             <p>Retrouvez tous les membres de la promotion 2025.</p>
-            <a href="views/promotion.php" class="btn">Voir la promotion</a>
+            <a href="<?= BASE_URL ?>student/promotion" class="btn">Voir la promotion</a>
         </section>
     </header>
 
@@ -65,8 +65,8 @@
                     </div>
 
                     <div class="about-cta">
-                        <a href="views/presentation.php" class="btn">Découvrir la formation →</a>
-                        <a href="views/contact.php" class="btn btn-outline">Nous contacter</a>
+                        <a href="<?= BASE_URL ?>student/presentation" class="btn">Découvrir la formation →</a>
+                        <a href="<?= BASE_URL ?>student/contact" class="btn btn-outline">Nous contacter</a>
                     </div>
 
                 </section>

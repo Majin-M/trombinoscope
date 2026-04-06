@@ -10,8 +10,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
             rel="stylesheet" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/perso.css" />
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/css/style.css" />
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/css/admin.css" />
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/css/perso.css" />
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/css/form.css" />
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/css/presentation.css" />
     </head>
 
 <body>
@@ -19,11 +22,11 @@
         <nav class="navbar">
             <div class="logo">S<span>cholia</span></div>
             <ul>
-                <li><a href="accueil.php">Accueil</a></li>
-                <li><a href="presentation.php">Présentation</a></li>
-                <li><a href="promotion.php">Promotion</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="admin/index.php" class="btn-nav">Administration</a></li>
+                <li><a href="<?= BASE_URL ?>student/accueil">Accueil</a></li>
+                <li><a href="<?= BASE_URL ?>student/presentation">Présentation</a></li>
+                <li><a href="<?= BASE_URL ?>student/promotion">Promotion</a></li>  
+                <li><a href="<?= BASE_URL ?>student/contact">Contact</a></li>
+                <li><a href="<?= BASE_URL ?>student/admin" class="btn-nav">Administration</a></li>
             </ul>
         </nav>
 

@@ -23,11 +23,11 @@
 		<section class="promo-section">
 			<h1>Notre Promotion 2025</h1>
 			<div class="grid">
-				<?php foreach ($students->getStudent() as $etudiant){ ?>
+				<?php foreach ($students as $etudiant){ ?>
 				<div class="card">
 					<div class="card-img">
 						<div class="avatar">
-							<img src="img/<?= $etudiant->getPhoto() ?>" alt="<?= $etudiant->getNom() . " " . $etudiant->getPrenom() ?>" />
+							<img src="<?= BASE_URL ?>public/img/<?= $etudiant->getPhoto() ?>" alt="<?= $etudiant->getNom() . " " . $etudiant->getPrenom() ?>" />
 						</div>
 					</div>
 					<div class="card-info">

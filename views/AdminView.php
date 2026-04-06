@@ -8,9 +8,6 @@ ob_start(); ?>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Administration — Scholia</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="public/css/style.css" />
-  <link rel="stylesheet" href="public/css/admin.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
@@ -35,14 +32,14 @@ ob_start(); ?>
         <div class="stat-card">
           <div class="stat-icon"><i class="fas fa-users"></i></div>
           <div>
-            <div class="stat-value"><?= count($students->getStudent()) ?></div>
+            <div class="stat-value"><?= count($students) ?></div>
             <div class="stat-label">Étudiants</div>
           </div>
         </div>
         <div class="stat-card">
           <div class="stat-icon orange"><i class="fas fa-user-check"></i></div>
           <div>
-            <div class="stat-value">12</div>
+            <div class="stat-value"><?= $completeProfiles ?></div>
             <div class="stat-label">Profils complets</div>
           </div>
         </div>
@@ -85,26 +82,28 @@ ob_start(); ?>
             <tbody>
               <?php
               $i = 1;
-              foreach ($students->getStudent() as $etudiant) {
+              foreach ($students as $etudiant) {
               ?>
                 <tr>
                   <td class="td-num"><?= $i++ ?></td>
                   <td>
                     <div class="table-avatar">
-                      <img src="public/img/<?= $etudiant->getPhoto() ?>" alt="<?= $etudiant->getNom() . " " . $etudiant->getPrenom() ?>" />
+                      <img src="<?= BASE_URL ?>public/img/<?= $etudiant->getPhoto() ?>" alt="<?= $etudiant->getNom() . " " . $etudiant->getPrenom() ?>" />
                     </div>
                   </td>
-                  <td class="td-name"><?= $etudiant->getNom() . " " . $etudiant->getPrenom() ?> </td>
+                  <td class="td-name">
+                    <?= $etudiant->getNom() . " " . $etudiant->getPrenom() ?>
+                   </td>
                   <td class="td-age"><?= $etudiant->getAge() . " ans" ?></td>
                   <td><a href="<?= $etudiant->getGithub() ?>" class="td-link"><i class="fab fa-github"></i></a></td>
                   <td><a href="<?= $etudiant->getLinkedin() ?>" class="td-link linkedin"><i class="fab fa-linkedin-in"></i></a></td>
                   <td><a href="<?= $etudiant->getPortfolio() ?>" class="td-link portfolio"><i class="fas fa-globe"></i></a></td>
                   <td>
                     <div class="action-btns">
-                      <a href="index.php?url=student/index&id_edit=<?= $etudiant->getId() ?>#form-edit" class="action-btn edit">
+                      <a href="admin&id_edit=<?= $etudiant->getId() ?>#form-edit" class="action-btn edit">
                         <i class="fas fa-pen"></i>
                       </a>
-                      <form method="post" action="index.php?url=student/delete">
+                      <form method="post" action="delete">
                         <input type="hidden" name="id_delete" value="<?= $etudiant->getId() ?>">
                         <button class="action-btn delete" name="delete" value="Supprimer" title="Supprimer">
                           <i class="fas fa-trash"></i>
@@ -127,7 +126,7 @@ ob_start(); ?>
           <h2>Ajouter un étudiant</h2>
         </div>
 
-        <form class="admin-form" action="index.php?url=student/add" method="post">
+        <form class="admin-form" action="add" method="post" enctype="multipart/form-data">
           <div class="form-row">
             <div class="form-group">
               <label for="add-nom">Nom</label>
@@ -174,10 +173,7 @@ ob_start(); ?>
           <div class="form-row">
             <div class="form-group">
               <label for="add-photo">Photo</label>
-              <div class="input-icon">
-                <i class="fas fa-image"></i>
-                <input id="add-photo" name="photo" value="" type="text" placeholder="prenom-nom.jpg" />
-              </div>
+              <input id="add-photo" type="file" name="photo">
             </div>
             <div class="form-group">
               <label for="add-description">Description</label>
@@ -202,78 +198,84 @@ ob_start(); ?>
           <i class="fas fa-user-edit"></i>
           <h2>Modifier un étudiant</h2>
         </div>
+        <div class="card-img">
+						<div class="avatar">
+							<img src="<?= BASE_URL ?>public/img/<?= $etudiantAModifier["photo"] ?>" alt="<?= $etudiantAModifier["nom"] . " " . $etudiantAModifier["prenom"] ?>" />
+						</div>
+					</div>
 
-        <form class="admin-form" action="index.php?url=student/update" method="post">
+        <form class="admin-form" action="update" method="post" enctype="multipart/form-data">
           <input name="id" type="hidden" value="<?= $etudiantAModifier["id"] ?>" />
-      
-      <div class="form-row">
-        <div class="form-group">
-          <label for="edit-nom">Nom</label>
-          <input id="edit-nom" name="nom" type="text" value="<?= $etudiantAModifier["nom"] ?? '' ?>" required />
-        </div>
-        <div class="form-group">
-          <label for="edit-prenom">Prénom</label>
-          <input id="edit-prenom" name="prenom" type="text" value="<?= $etudiantAModifier["prenom"] ?? '' ?>" required />
-        </div>
 
-      </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-nom">Nom</label>
+              <input id="edit-nom" name="nom" type="text" value="<?= $etudiantAModifier["nom"] ?? '' ?>" required />
+            </div>
+            <div class="form-group">
+              <label for="edit-prenom">Prénom</label>
+              <input id="edit-prenom" name="prenom" type="text" value="<?= $etudiantAModifier["prenom"] ?? '' ?>" required />
+            </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="edit-age">Âge</label>
-          <input id="edit-age" name="age" type="text" value="<?= $etudiantAModifier["age"] ?? '' ?>" required />
-        </div>
-        <div class="form-group">
-          <label for="edit-github">GitHub</label>
-          <div class="input-icon">
-            <i class="fab fa-github"></i>
-            <input id="edit-github" name="github" type="url" value="<?= $etudiantAModifier["github"] ?? '' ?>" />
           </div>
-        </div>
 
-      </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-age">Âge</label>
+              <input id="edit-age" name="age" type="text" value="<?= $etudiantAModifier["age"] ?? '' ?>" required />
+            </div>
+            <div class="form-group">
+              <label for="edit-github">GitHub</label>
+              <div class="input-icon">
+                <i class="fab fa-github"></i>
+                <input id="edit-github" name="github" type="url" value="<?= $etudiantAModifier["github"] ?? '' ?>" />
+              </div>
+            </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="edit-linkedin">LinkedIn</label>
-          <div class="input-icon">
-            <i class="fab fa-linkedin-in"></i>
-            <input id="edit-linkedin" name="linkedin" type="url" value="<?= $etudiantAModifier["linkedin"] ?? '' ?>" />
           </div>
-        </div>
-        <div class="form-group">
-          <label for="edit-portfolio">Portfolio</label>
-          <div class="input-icon">
-            <i class="fas fa-globe"></i>
-            <input id="edit-portfolio" name="portfolio" type="url" value="<?= $etudiantAModifier["portfolio"] ?? '' ?>" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-linkedin">LinkedIn</label>
+              <div class="input-icon">
+                <i class="fab fa-linkedin-in"></i>
+                <input id="edit-linkedin" name="linkedin" type="url" value="<?= $etudiantAModifier["linkedin"] ?? '' ?>" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="edit-portfolio">Portfolio</label>
+              <div class="input-icon">
+                <i class="fas fa-globe"></i>
+                <input id="edit-portfolio" name="portfolio" type="url" value="<?= $etudiantAModifier["portfolio"] ?? '' ?>" />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="edit-photo">Photo</label>
-          <div class="input-icon">
-            <i class="fas fa-image"></i>
-            <input id="edit-photo" name="photo" type="text" value="<?= $etudiantAModifier["photo"] ?? '' ?>" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="edit-description">Description</label>
-          <textarea name="description">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="edit-photo">Photo</label>
+              <div class="input-icon">
+                <i class="fas fa-image"></i>
+                <input name="photo_actuelle" type="hidden" value="<?= $etudiantAModifier["photo"] ?? '' ?>" />
+                 <input id="edit-photo" type="file" name="photo">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="edit-description">Description</label>
+              <textarea name="description">
             <?= $etudiantAModifier["description"] ?? '' ?>
           </textarea>
-        </div>
+            </div>
+          </div>
+          <div class="form-footer">
+            <button type="reset" class="btn-secondary">
+              <i class="fas fa-times"></i> Annuler
+            </button>
+            <button type="submit" name="submit" value="Enregistrer" class="btn-primary btn-save">
+              <i class="fas fa-save"></i> Enregistrer
+            </button>
+          </div>
+        </form>
       </div>
-      <div class="form-footer">
-        <button type="reset" class="btn-secondary">
-          <i class="fas fa-times"></i> Annuler
-        </button>
-        <button type="submit" name="submit" value="Enregistrer" class="btn-primary btn-save">
-          <i class="fas fa-save"></i> Enregistrer
-        </button>
-      </div>
-      </form>
-    </div>
 
     </section>
   </main>

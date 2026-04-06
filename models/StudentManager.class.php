@@ -63,6 +63,24 @@ class StudentManager extends Model
             "description" => $description
         ]);
     }
+
+    public function countCompleteProfiles(): int
+    {
+        $req = $this->getBdd()->prepare("
+        SELECT COUNT(*) 
+        FROM student 
+        WHERE photo       IS NOT NULL AND photo       != ''
+        AND   nom         IS NOT NULL AND nom         != ''
+        AND   prenom      IS NOT NULL AND prenom      != ''
+        AND   age         IS NOT NULL AND age         != ''
+        AND   github      IS NOT NULL AND github      != ''
+        AND   linkedin    IS NOT NULL AND linkedin    != ''
+        AND   portfolio   IS NOT NULL AND portfolio   != ''
+        AND   description IS NOT NULL AND description != ''
+    ");
+        $req->execute();
+        return (int) $req->fetchColumn();
+    }
     //méthode qui charge tous les étudiants de la Bdd et les ajoute au tableau $students
     public function loadStudents()
     {
