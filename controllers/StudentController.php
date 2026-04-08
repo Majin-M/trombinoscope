@@ -1,4 +1,5 @@
 <?php
+require_once 'models/StudentManager.class.php';
 class StudentController
 {
 

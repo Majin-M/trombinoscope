@@ -22,11 +22,11 @@
         <nav class="navbar">
             <div class="logo">S<span>cholia</span></div>
             <ul>
-                <li><a href="<?= BASE_URL ?>student/accueil">Accueil</a></li>
-                <li><a href="<?= BASE_URL ?>student/presentation">Présentation</a></li>
-                <li><a href="<?= BASE_URL ?>student/promotion">Promotion</a></li>  
-                <li><a href="<?= BASE_URL ?>student/contact">Contact</a></li>
-                <li><a href="<?= BASE_URL ?>student/admin" class="btn-nav">Administration</a></li>
+                <li><a href="<?= BASE_URL ?>accueil">Accueil</a></li>
+                <li><a href="<?= BASE_URL ?>presentation">Présentation</a></li>
+                <li><a href="<?= BASE_URL ?>promotion">Promotion</a></li>  
+                <li><a href="<?= BASE_URL ?>contact">Contact</a></li>
+                <li><a href="<?= BASE_URL ?>admin" class="btn-nav">Administration</a></li>
             </ul>
         </nav>
 

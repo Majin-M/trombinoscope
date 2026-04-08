@@ -126,7 +126,7 @@ ob_start(); ?>
           <h2>Ajouter un étudiant</h2>
         </div>
 
-        <form class="admin-form" action="add" method="post" enctype="multipart/form-data">
+        <form id="addForm" class="admin-form" action="add" method="post" enctype="multipart/form-data">
           <div class="form-row">
             <div class="form-group">
               <label for="add-nom">Nom</label>
@@ -204,7 +204,7 @@ ob_start(); ?>
 						</div>
 					</div>
 
-        <form class="admin-form" action="update" method="post" enctype="multipart/form-data">
+        <form id="editForm" class="admin-form" action="update" method="post" enctype="multipart/form-data">
           <input name="id" type="hidden" value="<?= $etudiantAModifier["id"] ?>" />
 
           <div class="form-row">

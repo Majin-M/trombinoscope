@@ -6,7 +6,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil</title>
-    <link rel="stylesheet" href="/public/css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet" />
 </head>
 
@@ -16,7 +15,7 @@
         <section class="hero">
             <h1>Bienvenue sur notre formation Concepteur developpeur d'applications🎓</h1>
             <p>Retrouvez tous les membres de la promotion 2025.</p>
-            <a href="<?= BASE_URL ?>student/promotion" class="btn">Voir la promotion</a>
+            <a href="<?= BASE_URL ?>promotion" class="btn">Voir la promotion</a>
         </section>
     </header>
 
@@ -65,8 +64,8 @@
                     </div>
 
                     <div class="about-cta">
-                        <a href="<?= BASE_URL ?>student/presentation" class="btn">Découvrir la formation →</a>
-                        <a href="<?= BASE_URL ?>student/contact" class="btn btn-outline">Nous contacter</a>
+                        <a href="<?= BASE_URL ?>presentation" class="btn">Découvrir la formation →</a>
+                        <a href="<?= BASE_URL ?>contact" class="btn btn-outline">Nous contacter</a>
                     </div>
 
                 </section>
