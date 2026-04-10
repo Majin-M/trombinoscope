@@ -10,6 +10,18 @@
     private int $age;
     private string $description;
 
+    /**
+     * @description Constructeur de la classe Student
+     * @param int $id L'identifiant de l'étudiant
+     * @param string $photo L'URL de l photo de l'étudiant
+     * @param string $nom Le nom de l'étudiant
+     * @param string $prenom Le prénom de l'étudiant
+     * @param string $github L'URL de GitHub de l'étudiant
+     * @param string $linkedin L'URL de LinkedIn de l'étudiant
+     * @param string $portfolio L'URL de portfolio de l'étudiant
+     * @param int $age L'âge de l'étudiant
+     * @param string $description La description de l'étudiant
+     */
     public function __construct($id,$photo,$nom,$prenom,$github,$linkedin,$portfolio,$age,$description){
         $this->id=$id;
         $this->photo=$photo;

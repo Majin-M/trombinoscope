@@ -4,7 +4,10 @@ abstract class Model
 {
     private static $PDO;
 
-    //méthode statique qui établit la connexion à la Base de Données
+    /**
+     * @description Établit la connexion à la Base de Données et la stocke dans la variable $PDO
+     * @return void
+     */
     private static function setBdd()
     {
         
@@ -13,6 +16,10 @@ abstract class Model
         self::$PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
     }
+    /**
+     * @description Retourne la connexion à la Base de Données
+     * @return PDO
+     */
     protected function getBdd(){
         //si la connexion à la Bdd n'est pas encore établie, on la crée
         if (self::$PDO==null){

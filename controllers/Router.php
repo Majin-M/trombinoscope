@@ -11,6 +11,10 @@ class Router
         $this->controller = new StudentController();
     }
 
+    /**
+     * @description Route la requête de l'utilisateur vers la page correspondante
+     * @return void
+     */
     public function routeReq(): void
     {
         try {
